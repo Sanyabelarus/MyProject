@@ -15,6 +15,14 @@ public class Section {
     @ManyToMany(mappedBy = "section")
     private Set<Client> client;
 
+    @ManyToOne
+    @JoinColumn(name = "gym_id", nullable = false)
+    private Gym gym;
+
+    @ManyToOne
+    @JoinColumn(name = "trainer_id", nullable = false)
+    private Trainer trainer;
+
 
     public Integer getId() {
         return id;
@@ -30,5 +38,29 @@ public class Section {
 
     public void setClients(Set<Client> clients) {
         this.client = clients;
+    }
+
+    public Set<Client> getClient() {
+        return client;
+    }
+
+    public void setClient(Set<Client> client) {
+        this.client = client;
+    }
+
+    public Gym getGym() {
+        return gym;
+    }
+
+    public void setGym(Gym gym) {
+        this.gym = gym;
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 }

@@ -11,7 +11,7 @@ public class Roles {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
-  @OneToMany(mappedBy = "roles",fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "roles")
   private Set<User> user;
 
   private String roleName;

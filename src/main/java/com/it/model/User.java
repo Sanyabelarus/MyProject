@@ -13,6 +13,9 @@ public class User {
   @OneToMany(mappedBy = "user")
   private Set<Client> clients;
 
+  @OneToMany(mappedBy = "user")
+  private Set<Trainer> trainers;
+
   @ManyToOne
   @JoinColumn(name = "roles_id", nullable = false)
   private Roles roles;
