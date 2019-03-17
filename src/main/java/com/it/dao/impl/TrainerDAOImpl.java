@@ -34,7 +34,7 @@ public class TrainerDAOImpl extends GenericDAOImpl<Trainer, Integer> implements 
      * @return List<Client>
      */
     @Override
-    public List<Client> findAll(Integer firstResult, Integer maxResult) {
+    public List<Trainer> findAll(Integer firstResult, Integer maxResult) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             String hql = "SELECT detail.* FROM Detail detail";
             Query query = session.createNativeQuery(hql, Client.class);

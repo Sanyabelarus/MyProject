@@ -7,5 +7,5 @@ import com.it.model.Trainer;
 import java.util.List;
 
 public interface TrainerDAO extends GenericDAO<Trainer, Integer> {
-    List<Client> findAll(Integer firstResult, Integer maxResult);
+    List<Trainer> findAll(Integer firstResult, Integer maxResult);
 }

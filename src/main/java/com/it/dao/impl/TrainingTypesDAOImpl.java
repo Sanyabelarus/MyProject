@@ -25,23 +25,4 @@ public class TrainingTypesDAOImpl extends GenericDAOImpl<TrainingTypes, Integer>
         return instance;
     }
 
-    /**
-     * Find page of All Details
-     * NativeSQl implementation
-     *
-     * @param firstResult - firstResult
-     * @param maxResult   - maxResult
-     * @return List<Client>
-     */
-    @Override
-    public List<Client> findAll(Integer firstResult, Integer maxResult) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "SELECT detail.* FROM Detail detail";
-            Query query = session.createNativeQuery(hql, Client.class);
-            query.setFirstResult(firstResult);
-            query.setMaxResults(maxResult);
-            return query.list();
-        }
-    }
-
 }

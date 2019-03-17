@@ -40,4 +40,5 @@ public class TrainingTypes {
     this.trainers = trainers;
   }
 
+
 }

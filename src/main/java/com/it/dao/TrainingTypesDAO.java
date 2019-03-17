@@ -1,9 +1,8 @@
 package com.it.dao;
 
 import com.it.model.Client;
+import com.it.model.TrainingTypes;
 
-import java.util.List;
 
-public interface TrainingTypesDAO extends GenericDAO<com.it.model.TrainingTypes, Integer> {
-    List<Client> findAll(Integer firstResult, Integer maxResult);
+public interface TrainingTypesDAO extends GenericDAO<TrainingTypes, Integer> {
 }

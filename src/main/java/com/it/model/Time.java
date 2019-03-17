@@ -22,4 +22,11 @@ public class Time {
         this.id = id;
     }
 
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
+    }
 }

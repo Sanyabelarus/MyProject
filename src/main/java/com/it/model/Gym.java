@@ -51,4 +51,5 @@ public class Gym {
     public void setDateTimes(Set<DateTime> dateTimes) {
         this.dateTimes = dateTimes;
     }
+
 }

@@ -33,4 +33,12 @@ public class Day {
     public void setDateTime(DateTime dateTime) {
         this.dateTime = dateTime;
     }
+
+    public Set<Time> getTimes() {
+        return times;
+    }
+
+    public void setTimes(Set<Time> times) {
+        this.times = times;
+    }
 }

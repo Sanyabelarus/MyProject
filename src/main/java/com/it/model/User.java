@@ -84,4 +84,12 @@ public class User {
   public void setRoles(Roles roles) {
     this.roles = roles;
   }
+
+  public Set<Trainer> getTrainers() {
+    return trainers;
+  }
+
+  public void setTrainers(Set<Trainer> trainers) {
+    this.trainers = trainers;
+  }
 }

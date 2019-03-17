@@ -1,16 +1,8 @@
 package com.it.app;
 
-import com.it.dao.ClientDao;
-import com.it.dao.RolesDao;
-import com.it.dao.SectionDao;
-import com.it.dao.UserDAO;
-import com.it.dao.impl.ClientDAOImpl;
-import com.it.dao.impl.RolesDAOImpl;
-import com.it.dao.impl.SectionDAOImpl;
-import com.it.dao.impl.UserDAOImpl;
-import com.it.model.Roles;
-import com.it.model.User;
-import com.it.model.Client;
+import com.it.dao.*;
+import com.it.dao.impl.*;
+import com.it.model.*;
 
 import javax.management.relation.Role;
 import java.util.List;
@@ -20,16 +12,11 @@ public class Main {
   private static final ClientDao clientDAO = ClientDAOImpl.getInstance();
   private static final RolesDao rolesDAO = RolesDAOImpl.getInstance();
   private static final SectionDao sectionDAO = SectionDAOImpl.getInstance();
+  private static final TrainerDAO trainerDAO = TrainerDAOImpl.getInstance();
+  private static final TrainingTypesDAO trainingTypesDAO = TrainingTypesDAOImpl.getInstance();
 
   public static void main(String[] arguments) {
-    createRole();
-    User user1 = userDAO.getOne(42);
-    Roles roles = rolesDAO.getOne(1);
-    System.out.println(roles.getId());
-    createUser("Kiril", "13", "san@g.com", "kiril", roles);
-    User user = userDAO.getOne(42);
-    System.out.println(user.getId());
-    createClient(user);
+    
   }
 
   private static void createClient(User persistUser) {
@@ -37,8 +24,20 @@ public class Main {
     transientClient.setHaveclubcard(true);
     transientClient.setMoney(50);
     transientClient.setUser(persistUser);
-    System.out.println(transientClient.getUser().getId());
     clientDAO.save(transientClient);
+  }
+
+  private static void createTrainingType() {
+    TrainingTypes trainingTypes = new TrainingTypes();
+    trainingTypes.setTrainingName("Running");
+    trainingTypesDAO.save(trainingTypes);
+  }
+
+  private static void createTrainer(User persistUser, TrainingTypes trainingTypes) {
+    Trainer trainer = new Trainer();
+    trainer.setUser(persistUser);
+    trainer.setTrainingTypes(trainingTypes);
+    trainerDAO.save(trainer);
   }
 
   public static void createRole() {
