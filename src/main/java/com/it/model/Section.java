@@ -1,7 +1,6 @@
 package com.it.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,6 +22,15 @@ public class Section {
     @JoinColumn(name = "trainer_id", nullable = false)
     private Trainer trainer;
 
+    public Section(Integer id, Set<Client> client, Gym gym, Trainer trainer) {
+        this.id = id;
+        this.client = client;
+        this.gym = gym;
+        this.trainer = trainer;
+    }
+
+    public Section() {
+    }
 
     public Integer getId() {
         return id;
@@ -55,6 +63,7 @@ public class Section {
     public void setGym(Gym gym) {
         this.gym = gym;
     }
+
 
     public Trainer getTrainer() {
         return trainer;

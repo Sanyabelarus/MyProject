@@ -17,14 +17,24 @@ public class Client {
 
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "client_has_section",
-            joinColumns = {@JoinColumn(name = "client_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "section_id", referencedColumnName = "id")})
+            joinColumns = {@JoinColumn(name = "section_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "client_id", referencedColumnName = "id")})
     private Set<Section> section;
 
     private Boolean haveclubcard;
 
     private Integer money;
 
+    public Client(Integer id, User user, Set<Section> section, Boolean haveclubcard, Integer money) {
+        this.id = id;
+        this.user = user;
+        this.section = section;
+        this.haveclubcard = haveclubcard;
+        this.money = money;
+    }
+
+    public Client() {
+    }
 
     public Integer getId() {
         return id;
@@ -65,4 +75,5 @@ public class Client {
     public void setSection(Set<Section> section) {
         this.section = section;
     }
+
 }

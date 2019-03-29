@@ -29,6 +29,20 @@ public class User {
 
   private String email;
 
+  public User(Integer id, Set<Client> clients, Set<Trainer> trainers, Roles roles, String name, String login, String password, String email) {
+    this.id = id;
+    this.clients = clients;
+    this.trainers = trainers;
+    this.roles = roles;
+    this.name = name;
+    this.login = login;
+    this.password = password;
+    this.email = email;
+  }
+
+  public User() {
+  }
+
   public Integer getId() {
     return id;
   }
@@ -92,4 +106,5 @@ public class User {
   public void setTrainers(Set<Trainer> trainers) {
     this.trainers = trainers;
   }
+
 }

@@ -18,6 +18,14 @@ public class DateTime {
     @OneToMany(mappedBy = "dateTime")
     private Set<Day> days;
 
+    public DateTime(Integer id, Gym gym, Set<Day> days) {
+        this.id = id;
+        this.gym = gym;
+        this.days = days;
+    }
+
+    public DateTime() {
+    }
 
     public Integer getId() {
         return id;
@@ -42,4 +50,5 @@ public class DateTime {
     public void setDays(Set<Day> days) {
         this.days = days;
     }
+
 }

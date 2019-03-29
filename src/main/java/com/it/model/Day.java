@@ -18,6 +18,15 @@ public class Day {
     @OneToMany(mappedBy = "day")
     private Set<Time> times;
 
+    public Day(Integer id, DateTime dateTime, Set<Time> times) {
+        this.id = id;
+        this.dateTime = dateTime;
+        this.times = times;
+    }
+
+    public Day() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -41,4 +50,5 @@ public class Day {
     public void setTimes(Set<Time> times) {
         this.times = times;
     }
+
 }

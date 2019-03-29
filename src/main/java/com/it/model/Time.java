@@ -14,6 +14,14 @@ public class Time {
     @JoinColumn(name = "day_id", nullable = false)
     private Day day;
 
+    public Time(Integer id, Day day) {
+        this.id = id;
+        this.day = day;
+    }
+
+    public Time() {
+    }
+
     public Integer getId() {
         return id;
     }
@@ -29,4 +37,5 @@ public class Time {
     public void setDay(Day day) {
         this.day = day;
     }
+
 }

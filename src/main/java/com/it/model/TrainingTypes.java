@@ -16,6 +16,15 @@ public class TrainingTypes {
 
   private String trainingName;
 
+  public TrainingTypes(Integer id, Set<Trainer> trainers, String trainingName) {
+    this.id = id;
+    this.trainers = trainers;
+    this.trainingName = trainingName;
+  }
+
+  public TrainingTypes() {
+  }
+
   public Integer getId() {
     return id;
   }

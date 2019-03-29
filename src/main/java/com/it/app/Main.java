@@ -14,9 +14,13 @@ public class Main {
   private static final SectionDao sectionDAO = SectionDAOImpl.getInstance();
   private static final TrainerDAO trainerDAO = TrainerDAOImpl.getInstance();
   private static final TrainingTypesDAO trainingTypesDAO = TrainingTypesDAOImpl.getInstance();
+  private static final GymDAO gymDAO = GymDAOImpl.getInstance();
 
   public static void main(String[] arguments) {
-    
+    createGym();
+    createRole();
+    Roles role = rolesDAO.getOne(1);
+    createUser("1231","1232","ndfn","24324", role);
   }
 
   private static void createClient(User persistUser) {
@@ -25,6 +29,10 @@ public class Main {
     transientClient.setMoney(50);
     transientClient.setUser(persistUser);
     clientDAO.save(transientClient);
+  }
+  private static void createGym() {
+    Gym gym = new Gym();
+    gymDAO.save(gym);
   }
 
   private static void createTrainingType() {

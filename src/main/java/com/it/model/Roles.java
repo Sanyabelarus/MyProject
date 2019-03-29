@@ -16,6 +16,15 @@ public class Roles {
 
   private String roleName;
 
+  public Roles(Integer id, Set<User> user, String roleName) {
+    this.id = id;
+    this.user = user;
+    this.roleName = roleName;
+  }
+
+  public Roles() {
+  }
+
   public Integer getId() {
     return id;
   }
@@ -39,4 +48,5 @@ public class Roles {
     public void setUser(Set<User> user) {
         this.user = user;
     }
+
 }

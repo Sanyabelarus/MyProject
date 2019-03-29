@@ -19,6 +19,15 @@ public class Gym {
 
     String address;
 
+    public Gym(Integer id, Set<Section> sections, Set<DateTime> dateTimes, String address) {
+        this.id = id;
+        this.sections = sections;
+        this.dateTimes = dateTimes;
+        this.address = address;
+    }
+
+    public Gym() {
+    }
 
     public Integer getId() {
         return id;

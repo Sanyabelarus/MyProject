@@ -22,6 +22,15 @@ public class Trainer {
     @OneToMany(mappedBy = "trainer")
     private Set<Section> sections;
 
+    public Trainer(Integer id, User user, TrainingTypes trainingTypes, Set<Section> sections) {
+        this.id = id;
+        this.user = user;
+        this.trainingTypes = trainingTypes;
+        this.sections = sections;
+    }
+
+    public Trainer() {
+    }
 
     public Integer getId() {
         return id;
@@ -54,4 +63,5 @@ public class Trainer {
     public void setSections(Set<Section> sections) {
         this.sections = sections;
     }
+
 }
